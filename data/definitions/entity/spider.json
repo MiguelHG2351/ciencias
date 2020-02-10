@@ -1,0 +1,11 @@
+{
+  "definition.spider": {
+    "textures": {
+      "default": "textures/entity/spider/spider",
+      "cave_spider": "textures/entity/spider/cave_spider"
+    },
+    "geometry": {
+      "default": "geometry.spider"
+    }
+  }
+}

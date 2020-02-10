@@ -1,0 +1,10 @@
+{
+  "definition.iron_golem": {
+    "textures": {
+      "default": "textures/entity/iron_golem"
+    },
+    "geometry": {
+      "default": "geometry.irongolem"
+    }
+  }
+}

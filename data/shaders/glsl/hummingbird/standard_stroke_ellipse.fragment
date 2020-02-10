@@ -1,0 +1,40 @@
+// __multiversion__
+// This signals the loading code to prepend either #version 100 or #version 300 es as apropriate.
+
+#include "shaders/fragmentVersionCentroidUV.h"
+#include "shaders/uniformMacro.h"
+
+varying vec4 ColorOut;
+varying vec4 AdditionalOut;
+varying vec3 ScreenNormalPosition;
+
+uniform vec4 PRIM_PROPS_0;
+
+void main() {
+	float alpha = 1.0;
+	vec4 outColor = ColorOut;
+
+	vec2 offset = (ScreenNormalPosition.xy - AdditionalOut.xy) / (AdditionalOut.zw + PRIM_PROPS_0.x / 2.0);
+	float test = dot(offset, offset) - 1.0;
+	vec2 dudx = dFdx(offset);
+	vec2 dudy = dFdy(offset);
+	vec2 gradient = vec2(2.0 * offset.x * dudx.x + 2.0 * offset.y * dudx.y,
+						2.0 * offset.x * dudy.x + 2.0 * offset.y * dudy.y);
+	float grad_dot = max(dot(gradient, gradient), 1.0e-4);
+	float invlen = inversesqrt(grad_dot);
+
+	alpha = clamp(0.5 - test * invlen, 0.0, 1.0);
+
+	offset = (ScreenNormalPosition.xy - AdditionalOut.xy) / (AdditionalOut.zw - PRIM_PROPS_0.x / 2.0);
+	test = dot(offset, offset) - 1.0;
+	dudx = dFdx(offset);
+	dudy = dFdy(offset);
+	gradient = vec2(2.0 * offset.x * dudx.x + 2.0 * offset.y * dudx.y,
+					2.0 * offset.x * dudy.x + 2.0 * offset.y * dudy.y);
+	grad_dot = max(dot(gradient, gradient), 1.0e-4);
+	invlen = inversesqrt(grad_dot);
+
+	alpha *= clamp(0.5 + test * invlen, 0.0, 1.0);
+
+	gl_FragColor = outColor * alpha;
+}

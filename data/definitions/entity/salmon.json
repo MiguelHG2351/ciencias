@@ -1,0 +1,10 @@
+{
+  "definition.salmon": {
+    "textures": {
+       "default": "textures/entity/fish/salmon"
+    },
+    "geometry": {
+      "default": "geometry.salmon"
+    }
+  }
+}

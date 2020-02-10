@@ -1,0 +1,260 @@
+/*
+Los colores que tiene cada boder-left representa el tipo de información que se presenta al cliente  o usuario
+
+Rojo: Significa que es una sección del sitio que explica algo diferente, o complemento de otro y tiene diferentes artículos dentro con importancias medidas.
+Amarillo punteado: Son ejercicios propuestos
+Azul: Dato importante a memorizar
+Negro: Los artículos de la sección o partes del artículo
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    font-family: Verdana, Geneva, sans-serif;
+}
+
+:root {
+    --bg-body:#e0d9db;
+    --bg-hover: rgba(110, 132, 200, .7);
+    --red:#dc3545;
+    --warning:#ffc107;
+    --yellow:#ffc107;
+    --danger:#dc3545;
+    --width-Image:49%;
+}
+
+/* Margenes en el eje X */
+.mx-4 {
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+/* Margenes en el eje Y */
+.my-4 {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Padding en el eje Y */
+.py-4 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+/* Tipografías del sitio Segoe Print */
+
+html {
+    font-family: Roboto;
+}
+
+/* Estilos para títulos para Títulos */
+h1, h2, h3, h4, h4, h6 {
+    font-weight: 400;
+    font-family: Verdana, Geneva, sans-serif;
+}
+
+.title-site {
+    text-align: center;
+}
+
+.title-article {
+    border-left: 8px solid var(--red);
+    padding: 14.5px;
+}
+
+/* Secciones de Artículos */
+.section-article article h3, .section-article-2 article h3 {
+    border-left: 8px solid ;
+    padding: 14.5px;
+}
+
+/* Cursores */
+.cursor-img-in {
+    cursor: zoom-in;
+}
+
+.cursor-img-out {
+    cursor: zoom-out;
+}
+
+.z-5 {
+    position: relative;
+    z-index: 5;
+}
+
+/* overlay */
+.overlay {
+    position: fixed;
+}
+.overlay.is-active {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+
+/* Imágenes y videos responsivos */
+.img-responsive, .video-responsive {
+    width: 100%;
+    height: auto;
+}
+
+figcaption{
+    font-size: 18px;
+    text-align: center;
+}
+
+.img-overlay {
+    
+}
+
+/* Menú oculto del sitio */
+
+.nav-hide {
+    display: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+@media (max-width:1600px) {
+    html {
+        padding: 10px 13px;
+    }
+
+    .header-site {
+        box-shadow: 0 0 9px 8px bisque;
+        background-color: var(--bg-body);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .nav-hide {
+        width: 50%;
+        padding: 12px;
+        display: flex;
+    }
+    
+    .form-control {
+        width: 250px;
+        margin-left: 12px;
+        padding: 5px;
+        outline: none;
+        box-shadow: -1px 0px 5px #e0d9db inset;
+    }
+
+    .enterprise {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* .header-site .enterprise button {
+        background-color: red;
+        outline: none;
+        border: none;
+        color: #e0d9db;
+        padding: 9px;
+        margin-left: 4px;
+    } */
+
+    .nav-hide .list-menu {
+        width: 100%;
+        height: 100%;
+        list-style: none;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .nav-hide .list-menu li {
+        padding: 8px;
+    }
+
+    .list-menu li:hover {
+        background: var(--bg-hover);
+    }
+
+    .title-site {
+        font-size: 24px;
+        padding: 10px;
+    }
+
+    /* Estilos de la primera sección del sitio */
+
+    .intro-section-1, .intro-section-2 {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .intro-section-1 h1, .intro-section-2 h1 {
+        font-family: Verdana;
+        width: 100%;
+    }
+
+    .intro-section-1 .intro-section {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: flex-start;
+        line-height: 2;
+    }
+
+    .intro-section-1 .intro-section p {
+        font-weight: 500;
+        font-family: Verdana;
+    }
+
+    .intro-section-1 img  {
+        padding: 4px;
+        width: var(--width-Image);
+    }
+
+    .intro-section-1 div  {
+        padding: 4px;
+        width: 49%;
+    }
+
+    .article-1 {
+        margin-top: 15px;
+        padding: 8px;
+    }
+
+    .ramas {
+        width: 100%;
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    .ramas figure {
+        margin: 40px;
+        width: 26%;
+    }
+
+    .intro-section-2 {
+        align-items: center;    
+    }
+
+    .intro-section-2 figure {
+        width: var(--width-Image);
+    }
+}
+
+
+
+ 
+@media (max-width:768px) {
+    .header-site {
+        display: flex;
+        background-color: coral;
+        justify-content: space-between;
+        align-items: baseline;
+    }
+}

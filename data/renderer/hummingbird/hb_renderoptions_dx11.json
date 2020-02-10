@@ -1,0 +1,94 @@
+{
+    "global_settings" : {
+        "hb_gfx_supports_msaa_textures" : false,
+        "hb_gfx_requires_msaa_resolve" : true,
+        "hb_gfx_supports_a8_render_target" : true,
+        "hb_gfx_requires_rb_swap_for_images" : false,
+        "hb_gfx_requires_draw_fences" : false,
+        "hb_gfx_requires_shader_type_in_shader" : true,
+        "hb_gfx_supports_npot_texture_ops": true,
+        "hb_gfx_shader_change_requires_resources_rebind": false,
+        "hb_gfx_supports_only_16_bit_indices": true,
+        "hb_gfx_constant_buffer_block_alignment" : 1,
+        "hb_gfx_requires_y_flip_for_layers" : false
+    },
+    "shaders" : [
+        {
+            "name" : "ST_Standard",
+            "vertexShader" : "CohStandardVS.hlsl",
+            "fragmentShader" : "CohStandardPS.hlsl"
+        },
+        {
+            "name" : "ST_Text",
+            "vertexShader" : "CohTextVS.hlsl",
+            "fragmentShader" : "CohTextPS.hlsl"
+        },
+        {
+            "name" :  "ST_Path",
+            "vertexShader" : "CohPathVS.hlsl",
+            "fragmentShader" : "CohPathPS.hlsl"
+        },
+        {
+            "name" : "ST_StencilPath",
+            "vertexShader" : "CohPathVS.hlsl",
+            "fragmentShader" : "CohStencilPathPS.hlsl"
+        },
+        {
+            "name" : "ST_Stencil",
+            "vertexShader" : "CohStandardVS.hlsl",
+            "fragmentShader" : "CohStencilPS.hlsl"
+        }
+    ],
+    "mappings" : [
+        ["ST_Standard", "ST_Standard"],
+        ["ST_StandardCircle", "ST_Standard"],
+        ["ST_StandardStrokeEllipse", "ST_Standard"],
+        ["ST_StandardEllipse", "ST_Standard"],
+        ["ST_StandardRRect", "ST_Standard"],
+        ["ST_StandardStrokeRRect", "ST_Standard"],
+        ["ST_StandardTexture", "ST_Standard"],
+        ["ST_Path", "ST_Path"],
+        ["ST_PreRenderedPath", "ST_Standard"],
+        ["ST_Hairline", "ST_Standard"],
+        ["ST_Stencil", "ST_Stencil"],
+        ["ST_StencilRRect", "ST_Stencil"],
+        ["ST_StencilCircle", "ST_Stencil"],
+        ["ST_StencilTexture", "ST_Stencil"],
+        ["ST_StencilPath", "ST_StencilPath"],
+        ["ST_Text", "ST_Text"],
+        ["ST_TextSDF", "ST_Text"],
+        ["ST_TextStrokeSDF", "ST_Text"],
+        ["ST_Blur_1", "ST_Standard"],
+        ["ST_Blur_2", "ST_Standard"],
+        ["ST_Blur_3", "ST_Standard"],
+        ["ST_Blur_4", "ST_Standard"],
+        ["ST_Blur_5", "ST_Standard"],
+        ["ST_Blur_6", "ST_Standard"],
+        ["ST_Blur_7", "ST_Standard"],
+        ["ST_Blur_8", "ST_Standard"],
+        ["ST_Blur_9", "ST_Standard"],
+        ["ST_Blur_10", "ST_Standard"],
+        ["ST_Blur_11", "ST_Standard"],
+        ["ST_Blur_12", "ST_Standard"],
+        ["ST_RenoirShader", null],
+        ["ST_LinearGradient2Point", null],
+        ["ST_LinearGradient3PointSymmetrical", null],
+        ["ST_LinearGradientFromTexture", null],
+        ["ST_RadialGradient2Point", null],
+        ["ST_RadialGradient3PointSymmetrical", null],
+        ["ST_RadialGradientFromTexture", null],
+        ["ST_LinearGradientMasked2Point", null],
+        ["ST_LinearGradientMasked3PointSymmetrical", null],
+        ["ST_LinearGradientMaskedFromTexture", null],
+        ["ST_RadialGradientMasked2Point", null],
+        ["ST_RadialGradientMasked3PointSymmetrical", null],
+        ["ST_RadialGradientMaskedFromTexture", null],
+        ["ST_SimpleTexture", null],
+        ["ST_SimpleTextureMasked", null],
+        ["ST_StandardTextureWithColorMatrix", "ST_Standard"],
+        ["ST_TexturesWithColorMix", null],
+        ["ST_YUV2RGB", "ST_Standard"],
+        ["ST_YUVA2RGB", null]
+    ]
+}
+

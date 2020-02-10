@@ -1,0 +1,38 @@
+// __multiversion__
+// This signals the loading code to prepend either #version 100 or #version 300 es as apropriate.
+
+#include "shaders/vertexVersionSimple.h"
+
+attribute vec3 POSITION_3;
+attribute vec4 COLOR_4;
+attribute vec4 ADDITIONAL;
+
+uniform mat4 TRANSFORM;
+uniform mat4 COORD_TRANSFORM;
+uniform vec4 RENOIR_SHADER_VS_PROPS_0;
+
+varying vec4 ColorOut;
+varying vec4 AdditionalOut;
+varying vec3 ScreenNormalPosition;
+varying vec4 VaryingParam0;
+varying vec4 VaryingParam1;
+
+void main() {
+	vec4 outPos = vec4(POSITION_3, 1.0) * TRANSFORM;
+	ScreenNormalPosition = POSITION_3.xyz;
+
+	VaryingParam0 = vec4(POSITION_3, 1) * COORD_TRANSFORM;
+
+	VaryingParam1.x = POSITION_3.x * RENOIR_SHADER_VS_PROPS_0.x + RENOIR_SHADER_VS_PROPS_0.z;
+	VaryingParam1.y = POSITION_3.y * RENOIR_SHADER_VS_PROPS_0.y + RENOIR_SHADER_VS_PROPS_0.w;
+
+	// Translate to -1..1 with perspective correction
+	float w = outPos.w;
+	outPos.x = outPos.x * 2.0 - w;
+	outPos.y = (w - outPos.y) * 2.0 - w;
+
+	ColorOut = COLOR_4;
+	AdditionalOut = ADDITIONAL;
+
+	gl_Position = outPos;
+}

@@ -1,0 +1,15 @@
+// __multiversion__
+// This signals the loading code to prepend either
+
+#include "shaders/fragmentVersionCentroidUV.h"
+#include "shaders/uniformMacro.h"
+
+varying vec2 ExtraParams;
+
+void main() {
+	if (ExtraParams.y < 0.00390625) {
+		discard;
+	}
+
+	gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+}

@@ -1,0 +1,10 @@
+{
+  "definition.phantom": {
+    "textures": {
+      "default": "textures/entity/phantom"
+    },
+    "geometry": {
+      "default": "geometry.phantom"
+    }
+  }
+}

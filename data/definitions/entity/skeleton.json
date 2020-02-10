@@ -1,0 +1,12 @@
+{
+  "definition.skeleton": {
+    "textures": {
+      "default": "textures/entity/skeleton/skeleton"
+    },
+    "geometry": {
+      "default": "geometry.skeleton",
+      "armor1": "geometry.humanoid.armor1",
+      "armor2": "geometry.humanoid.armor2"
+    }
+  }
+}

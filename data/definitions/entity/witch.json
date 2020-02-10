@@ -1,0 +1,10 @@
+{
+  "definition.witch": {
+    "textures": {
+      "default": "textures/entity/witch"
+    },
+    "geometry": {
+      "default": "geometry.villager.witch"
+    }
+  }
+}

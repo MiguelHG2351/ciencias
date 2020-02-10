@@ -1,0 +1,12 @@
+{
+  "definition.creeper": {
+    "textures": {
+      "default": "textures/entity/creeper/creeper",
+      "charged": "textures/entity/creeper/creeper_armor"
+    },
+    "geometry": {
+      "default": "geometry.creeper",
+      "charged": "geometry.creeper.charged"
+    }
+  }
+}

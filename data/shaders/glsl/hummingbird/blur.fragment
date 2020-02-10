@@ -1,0 +1,31 @@
+// __multiversion__
+// This signals the loading code to prepend either #version 100 or #version 300 es as apropriate.
+
+#include "shaders/fragmentVersionCentroidUV.h"
+#include "shaders/uniformMacro.h"
+
+varying vec4 ColorOut;
+varying vec4 AdditionalOut;
+
+uniform sampler2D TEXTURE_0;
+
+uniform vec4 COEFFICIENTS[3];
+uniform vec4 PIXEL_OFFSETS[6];
+
+void main() {
+	vec4 outColor = vec4(0.0, 0.0, 0.0, 0.0);
+
+	for (int i = 0; i < BLUR_STEPS; ++i) {
+		vec4 coeffVec = COEFFICIENTS[i / 4];
+		float coeff = coeffVec[int(mod(float(i), 4.0))];
+		vec2 offset;
+		vec4 pixelOffsetX = PIXEL_OFFSETS[(i*2) / 4];
+		vec4 pixelOffsetY = PIXEL_OFFSETS[(i*2 + 1) / 4];
+		offset.x = pixelOffsetX[int(mod(float(i*2), 4.0))];
+		offset.y = pixelOffsetY[int(mod(float(i*2 + 1), 4.0))];
+
+		outColor += coeff * (texture2D(TEXTURE_0, AdditionalOut.xy + offset) + texture2D(TEXTURE_0, AdditionalOut.xy - offset));
+	}
+
+	gl_FragColor = outColor * ColorOut.a;
+}

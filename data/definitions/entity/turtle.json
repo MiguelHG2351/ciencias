@@ -1,0 +1,10 @@
+{
+  "definition.turtle": {
+    "textures": {
+      "default": "textures/entity/sea_turtle"
+    },
+    "geometry": {
+      "default": "geometry.turtle"
+    }
+  }
+}

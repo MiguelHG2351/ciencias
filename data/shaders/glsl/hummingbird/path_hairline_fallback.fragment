@@ -1,0 +1,23 @@
+// __multiversion__
+// This signals the loading code to prepend either
+
+#include "shaders/fragmentVersionCentroidUV.h"
+#include "shaders/uniformMacro.h"
+
+varying vec2 ExtraParams;
+
+uniform vec4 PRIM_PROPS_0;
+uniform vec4 PRIM_PROPS_1;
+uniform int SHADER_TYPE;
+
+void main() {
+	if(SHADER_TYPE == 14) {
+		// Hairline quads
+		// TODO: We need dFdx support
+		// so for now return ugly magenta color to indicate something is wrong
+		gl_FragColor = vec4(1.0, 0.0, 1.0, 1.0);
+	} else {
+		// Hairline lines
+		gl_FragColor = PRIM_PROPS_0 * min(1.0, (1.0 - abs(ExtraParams.y)) * PRIM_PROPS_1.x);
+	}
+}

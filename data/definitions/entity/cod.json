@@ -1,0 +1,10 @@
+{
+  "definition.cod": {
+    "textures": {
+       "default": "textures/entity/fish/cod"
+    },
+    "geometry": {
+      "default": "geometry.cod"
+    }
+  }
+}

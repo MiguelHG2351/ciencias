@@ -1,0 +1,10 @@
+{
+  "definition.dolphin": {
+    "textures": {
+      "default": "textures/entity/dolphin"
+    },
+    "geometry": {
+      "default": "geometry.dolphin"
+    }
+  }
+}

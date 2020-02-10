@@ -1,0 +1,37 @@
+// __multiversion__
+// This signals the loading code to prepend either #version 100 or #version 300 es as apropriate.
+
+#include "shaders/fragmentVersionCentroidUV.h"
+#include "shaders/uniformMacro.h"
+
+varying vec4 ColorOut;
+varying vec4 AdditionalOut;
+
+uniform sampler2D TEXTURE_0;
+
+// On Text:
+// x - glyphFactor, y - glyph size, z - stroke width
+uniform vec4 PRIM_PROPS_0;
+// On Text:
+// Stroke color
+uniform vec4 PRIM_PROPS_1;
+
+#define SHOW_DF 0
+
+void main() {
+	float dfValue = texture2D(TEXTURE_0, AdditionalOut.xy).a;
+#if SHOW_DF
+	gl_FragColor = vec4(dfValue.xxx, 1);
+#else
+	float scale = sqrt(PRIM_PROPS_0.y * 0.5);
+
+	float bias = 0.5 * scale - 0.9;
+	float outlineWidth = PRIM_PROPS_0.z / PRIM_PROPS_0.y * 0.5 * scale;
+	dfValue *= scale;
+
+	vec4 c = mix(PRIM_PROPS_1, ColorOut, clamp(dfValue - (bias + outlineWidth), 0.0, 1.0));
+
+	c *= clamp(dfValue - max(0.0, bias - outlineWidth), 0.0, 1.0);
+	gl_FragColor = c;
+#endif
+}

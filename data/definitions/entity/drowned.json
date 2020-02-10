@@ -1,0 +1,12 @@
+{
+  "definition.drowned": {
+    "textures": {
+      "default": "textures/entity/zombie/drowned"
+    },
+    "geometry": {
+      "default": "geometry.zombie.drowned",
+      "armor1": "geometry.humanoid.armor1",
+      "armor2": "geometry.humanoid.armor2"
+    }
+  }
+}

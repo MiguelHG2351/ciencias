@@ -1,0 +1,208 @@
+/*.inputL.is-active {
+  position:relative;
+  z-index:1000;
+}
+
+.overlayL {
+  background:rgba(0, 0, 0, .7);
+  position:fixed;
+  top:0;
+  bottom:0;
+  right:0;
+  left:0;
+  z-index:999;
+  display:none;
+}
+
+.overlayL.is-active {
+  display:block;
+}
+
+*/
+:root {
+  --color-azul:rgba(240, 0, 0, .3)
+}
+
+.margin_top_intro_header {
+  margin-top:6em;
+}
+
+.fondo_image_poli {
+  background-image:url(../image/polinomios.png);
+  height:auto;
+  background-size:100% 100vh;
+  background-repeat:no-repeat;
+}
+
+.antes_de_leer {
+  border-left:4px solid red;
+  background-color: var(--color-azul);
+}
+
+.align-example {
+  background-color:aqua;
+  padding:2px;
+  border-radius: 10px 0px 20px 6px;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+}
+
+.importantForMemory {
+  border-left:6px solid rgb(0, 100, 245);
+}
+
+.Subrayado {
+  text-decoration:underline;
+}
+
+.terminosSM {
+  display:flex;
+  padding:4px;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  background-color:rgb(52, 56, 64);
+  color:aqua;
+}
+
+.ejercicios {
+  border-left:6px dotted yellow;
+  padding-left:5px;
+}
+
+.ejemploContainer {
+    display:flex;
+    flex-wrap:wrap;
+/*  display:grid;
+  grid-template-rows: repeat(2, auto);
+  grid-template-columns: repeat(3, 1fr)
+  grid-template-areas: 'header header header' 'container container container'*/
+}
+
+.titleExample {
+  font-size:medium; 
+  width:100%;
+  text-align:center;
+  height:auto;
+/*  grid-area:header; */
+  background:linear-gradient(orange 20%, yellow 80%);
+  border:2px solid #000;
+}
+
+/* Código para ocultar el procedimiento */
+.ejercicio-hiden {
+  display:none;
+}
+
+.title-basic {
+  align-items:center;
+  display:flex;
+  flex-direction:column;
+}
+
+.b_bottom {
+  border-bottom:1px solid pink;
+}
+
+/* Permite disminuir el tamaño de letra que indica cada parte del sitio */
+.parte_site {
+  font-size:15px !important;
+}
+
+/* button stylus da un border al boton ver mas del ejemplo básico */
+.button-stylus {
+  margin-bottom:4px;
+  margin-left:12px;
+  text-transform:uppercase;
+  border-radius:13px;
+  border-style:solid;
+  border-color:#4285f4;
+  background-color:#4285f4;
+}
+
+/* Difícultad nivel 2 título */
+.titleExample2 {
+  font-size:medium; 
+  width:100%;
+  text-align:center;
+  height:auto;
+  background:linear-gradient(blue 50%, aqua 50%);
+  border:2px solid #000;
+}
+
+/* Procedimiento del ejemplo visible */
+.visible-display {
+  display:block;
+}
+
+.button-stylus:focus {
+  border:none;
+  border-radius:15px;
+  border-style:solid;
+  border-color:#4285f4;
+  background-color:#4285f4;
+  animation:1.46s rotacion linear ;
+}
+
+@keyframes rotacion {
+  26% {
+    background:#4274f4;
+    box-shadow:6px 3px 4px 2px rgba(0, 0, 180, .8);
+  }
+  45% {
+	background-color:#6386f7;
+	box-shadow:3px 2px 4px 4px rgba(0, 0, 180, .64);
+  }
+  67.245% {
+    background-color:#5176f7;
+    box-shadow:6px 5px 6px 6px rgba(0, 0, 180, .52);
+  }
+  98.57% {
+    background-color:#7493f8;
+    box-shadow:4px 1px 5px 8px rgba(0, 0, 180, .35);
+  }
+}
+
+.example-content {
+  /*#E9ECF4 Fondo blanco oscuro*/
+  background-color:#E9ECF4;
+/*  grid-area:container*/
+  width:100%;
+  border-left:2px solid #000;
+  border-right:2px solid #000;
+  border-bottom:2px solid #000;
+}
+
+.ecuacion_ejemplo {
+  margin:0px;
+  border-bottom:2px solid orange;
+}
+
+.example-content .title-question {
+  border-bottom:2px solid orange;
+  margin:0px;
+  width:auto;
+}
+
+.ejemploIndicator {
+  border-left:6px double orange;
+}
+
+.colorGradiente {
+  background-color:linear-gradient(aqua 20%, red 80%);
+}
+
+/*.terminosSM h6:first-child {
+  border-right:2px solid peru;
+} 
+
+.terminosSM h6:last-child {
+  border-left:2px solid fuchsia;
+}*/
+
+@media screen and (min-width:600px) {
+  /* Menu fixed dentro del sitio */
+  .fixedMenu {
+    position:fixed !important;
+  }
+}

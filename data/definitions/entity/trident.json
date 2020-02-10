@@ -1,0 +1,11 @@
+{
+  "definition.trident": {
+    "textures": {
+      "default": "textures/entity/trident",
+      "loyalty_rope": "textures/entity/loyalty_rope"
+    },
+    "geometry": {
+      "default": "geometry.trident"
+    }
+  }
+}

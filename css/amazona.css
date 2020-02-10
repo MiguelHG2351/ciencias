@@ -1,0 +1,62 @@
+
+.my-5 {
+  margin-top:70px;
+  margin-bottom:5px;
+}
+
+.footer_option {
+  margin:22px;
+  padding:10px;
+  border-left:7px solid purple;
+}
+
+.footer_option1 {
+  border-left:7px solid yellow; 
+  margin:22px;
+  padding:10px;
+  }
+  
+.footer_option2 {
+  border-left:7px solid gray;
+  margin:22px;
+  padding:10px;
+  display:block;
+  }
+  
+  .footer_option2:hover {
+    animation-name:hola;
+    animation-duration:2s;
+  }
+  
+  @keyframes hola {
+    25% {
+      background:rgba(0, 240, 0 .4);
+    }
+    60% {
+      background:rgba(0, 240, 0 .7);
+    }
+    97% {
+      background:rgba(0, 240, 0 .9);
+    }
+  }
+  
+.fondo_image {
+  background-size:100% 100vh;
+  background-repeat:no-repeat;
+  background-image:url("../image/huracán.jpg");
+}
+
+.dividir {
+  border-right:3px solid green;
+}
+
+.centrado {
+  margin:200px 0
+}
+
+.activehoverblue:hover {
+  color:white;
+  background:blue;
+  border-radius:70%;
+  box-shadow:0, 0, 6px 0 blue;
+}

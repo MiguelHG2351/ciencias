@@ -1,0 +1,12 @@
+{
+  "definition.pufferfish": {
+    "textures": {
+       "default": "textures/entity/fish/pufferfish"
+    },
+    "geometry": {
+      "default": "geometry.pufferfish.small",
+	  "mid": "geometry.pufferfish.mid",
+	  "large": "geometry.pufferfish.large"
+    }
+  }
+}

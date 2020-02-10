@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="es" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <meta name="theme-color" content="purple" />
+  <meta property="og:title" content="La guía básica: Polinomios, Álgebra." />
+  <meta property="og:image" content="image/polinomios.gif" />
+  <meta property="og:description" content="Los polinomios son la base del álgebra para resolver problemas nivel avanzado e importante para las demas ciencias." />
+  <title>Polinomios: Guía básica</title>
+  <link rel="stylesheet" href="css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/algebra.css" />
+  <link rel="stylesheet" href="css/icon.css">  
+  <link rel="icon" href="image/huracán.jpg" />
+  <style type="text/css">
+    .azul
+    {
+    background:rgba(0, 0, 200, .7);
+    }
+
+    .azultext
+    {
+      color:blue
+    }
+    .white-text a {
+      color:yellow
+    }
+    h1, h2, h3, h4, h5, h6
+    {
+    font-family:Roboto;
+    /*font-weight:bold;*/
+    }
+    .title_verdana {
+      font-family:Verdana,Arial,sans-serif; 
+    }
+  </style>
+</head>
+<body id="body" class="azul" >
+  <ul id="slide-out" class="sidenav">
+    <!-- Estructura de cuenta de usuario -->
+    <li>
+      <div class="user-view">
+        <div class="background">
+      	  <img class="responsive-img" src="image/platzi-logo.png">
+        </div>
+		<a href="#user" onclick="alert('to be continued')"><img class="circle" src="image/josue.jpg"></a>
+	    <a href="#name"><span class="white-text name">Josué Miguel</span></a>
+		<a href="#email"><span class="white-text email">josue4tito@gmail.com</span></a>
+    	<div class="" >
+      	  <input list="materias" class="inputL is-active" id="inputL" type="text" placeholder="buscar: Matemáticas, Historia...." />
+   	    </div>
+   	  </div>
+    </li>
+    <!-- configuraciones del Menu desplegable SideNav menu hidden -->
+    <li><a href="blog.html"><i class="material-icons">cloud</i>Blogs</a></li>
+    <li><a href="#!">Logros de alumnos</a></li>
+    <li><div class="divider"></div></li>
+    <li><a class="subheader">Educación</a></li>
+    <li><a class="waves-effect" href="inicio.html">Asignaturas</a></li>
+    <li><a href="matematicas.html" class="waves-effect" >Matemáticas</a></li>
+    <li><a href="history.html" class="waves-effect" >Historia</a></li>
+    <li><a href="quimica.html" class="waves-effect" >Química</a></li>
+	<li><a href="biología.html" class="waves-effect" >Biología</a></li>
+    <li><div class="divider" ></div>
+    <!-- Tabla de contenidos -->
+    <div class="col sl2">
+        <ul class="table-of-contents">
+        <li><a href="#intro">Introducción:</a></li>
+	    <li><a href="#clasificacion">Clasificación</a></li>
+	    <li><a href="#grado">Los grados</a></li>
+	    <li><a href="#terminos">Términos</a></li>	            	            
+	    <li><a href="#basico">Polinomios: Básicos</a></li>
+  	    <li><a href="#racional">Polinomios: racional</a></li>
+	    <li><a href="#homogeneo">Polinomios: Homogéneo</a></li>
+  	  </ul>
+	</div>
+  </ul>
+  <!-- Circulo Preloader -->
+  <div class="center" id="circulo" style="margin-top:25vh" >
+    <div class="preloader-wrapper big active" >
+      <div class="spinner-layer spinner-green-only" >
+  		<div class="circle-clipper left" >
+  	      <div class="circle" ></div>
+  		</div>
+  		<div class="gap-patch" >
+  	  	  <div class="circle" ></div>
+  		</div>
+    	<div class="circle-clipper right" >
+          <div class="circle" ></div>
+    	</div>
+ 	  </div>
+  </div>
+  <h3>Cargando</h3>
+  </div>
+  <!-- Cuerpo del sito ≠ hidden -->
+  <div id="mostrar" class="hide " >
+    <header class="" >
+      <!-- Menu visible -->
+      <nav class="transparent z-depth-0">
+        <div class="nav-wrapper" >  
+          <a style="color:blue" href="#" data-target="slide-out" class="cursores brand-logo sidenav-trigger left" >
+            <i class="material-icons" >menu</i>
+          </a>
+          <ul class="right" >
+            <li><a class="blue-text" href="index.php" >Inicio</a></li>
+            <li><a class="blue-text" href="blog.html" >Blog</a></li>
+            <li><a class="blue-text" href="ayuda.html" >Clases</a></li>                    
+            <li class="hide-on-small-only" style="border-right:8px solid green" ><a class="blue-text" href="foros.html" >Foros</a></li>
+            <li class="hide-on-small-only" ><a class="blue-text" href="ayuda.html" >Help!</a></li>
+            <li class="hide-on-small-only" ><a class="blue-text" href="mailto:miguelhernandezgaitan13@gmail.com" >Contactanos</a></li>  
+            <li class="hide-on-small-only" ><a class="blue-text" href="about.html" >about</a></li>                            
+          </ul> 
+        </div>         
+      </nav>
+      <!-- Fin del menu visible -->
+    </header>
+    <section class="section" >
+      <header class="fondo_image_poli row" >
+        <div class="col s2" ></div>
+        <div class="col s8 margin_top_intro_header" >
+          <h3 class=" white-text" >Polinomios: La guía básica.</h3> 
+          <p style="font-weight:normal" class="white-text partes_site" ><a href="inicio.html" >Inicio</a>/<a href="matematicas.html" >Matemáticas</a>/<a href="algebra.html" >Álgebra</a></a></p>
+        </div>
+        <div class="col s2" ></div>
+        </header>
+        <!-- Primer scrollspy -->
+      	<article id="intro" class="scrollspy container" >
+		  <header>
+		    <h5 class="light center" >Conceptos generales:</h5>
+		    <div class="divider" ></div>
+		  </header>		   
+		  <section id="algebraConcepto" >
+		  <!-- Conceptos -->
+		    <h5>Concepto Algebraico</h5>
+		    <p>Es un sumando de un expresión algebraica y representa una cantidad. A todo
+		    <b>término algebraico se le denomina monomio consta de coeficiente,parte literal (base
+		    y exponente)</b>.</p>
+		    <div class="antes_de_leer section" >
+		      <h5>Antes de leer lo siguiente.</h5>
+		      <p>En la siguiente documentación puede que te encuentres con oraciones o ejercicios que no comprendas exactamente
+		       haci que no te preocupes, puedes ver nuestro articulo sobre el lenguaje algebraico que te dejaremos a continuación.
+		      </p>
+		      <div class="center" >
+		        <a style="display:inline-block" href="lenguajeAl.html" class="btn yellow" >Lenguaje Algebraico</a>
+		      </div> 
+		    </div>
+		    <blockquote class="section" >Expresiones algebraicas.</blockquote>
+		    <p>
+		    Se conoce así a la combinación de números reales (constantes) y literales o letras (varia
+		    bles) que representan cantidades, mediante operaciones de suma, resta, multiplicación,
+		    división, potenciación.
+		    </p>
+		    <div class="yellow" style="border:4px solid rgba(0, 120, 120, .9); padding:7px">
+		      <span class="ejemploIndicator" >Example (Ejemplo).</span>
+		      <p class="center">2X+5Y+34=20</p><br><strong>Se le conoce como ecuación lineal de primer grado</strong>
+		    </div>
+		    <!-- Fin de los conceptos básicos -->
+		    <h5 class="section importantForMemory" >Partes del Polinomio.</h5>
+		    <div style="border:4px solid rgba(0, 120, 230, .9)" class="" >
+		    <!-- Tabla de polinomios -->  
+		      <table bgcolor="#008080" class="responsive-table" >
+		        <thead>
+		     	<tr>
+		       	  <th>Término</th>
+		       	  <th>Coeficiente</th>
+		          <th>Base(s)</th>
+		          <th>Exponente(s)</th>
+		        </tr>
+		        </thead>
+		       <tbody>
+		         <tr>
+		           <td>-8y<sup>3</sup></td>
+		           <td>-8</td>
+		           <td>y</td>
+		           <td>3</td>
+		         </tr>
+		         <tr>
+		           <td>5x<sup>7</sup></td>
+		           <td>5</td>
+		           <td>x</td>
+		           <td>7</td>
+		         </tr>
+		         <tr>
+		           <td>13x<sup>x+1</sup></td>
+		           <td>13</td>
+		           <td>x</td>
+		           <td>x+1</td>
+		         </tr>
+		         <tr>
+		           <td>12x<sup>2</sup>y<sup>5</sup></td>
+		           <td>12</td>
+		           <td>x, y</td>
+		           <td>2, 5</td>
+		         </tr>
+		      </tbody>	   
+		    </table>
+		    </div>
+		    </section>
+		    <!-- Clasificación de polinomios Inicio de Clasificación Definiciones de Polinomios -->
+		    <section id="clasificacion" class="scrollspy" >
+		    <blockquote id="basico" class="section" >Clasificación de Polinomios<br>
+		    Según la cantidad de términos.</blockquote>
+		    <div class="divider" ></div>
+		    <h4>Monomio</h4>
+		    <p>Es la mínima expresión algebraica que tiene un solo término.</p>
+		    <div style="padding:6px; border:3px solid orange; display:flex; justify-content:space-between" class="yellow" >
+		      <h6 style="" >82X</h6>
+		      <h6 style="" >3y</h6>
+		      <h6 style="" >4x/2</h6>
+		      <h6>⅓x</h6>
+		    </div>
+		    <h4>Binomio:</h4>
+		    <p>Es el polinomio que consta de 2 términos.</p>
+		    <div class="align-example" >
+		      <p>X<sup>3</sup>-9</p>
+		      <p>3+b</p>
+		      <p>x-y</p>
+		      <p>8x<sup>4</sup>+5y</p>
+		    </div>
+		    <!-- Carta uno -->
+		    <div class="card" >
+		      <div class="card-image" >
+		        <img src="image/reto1.png" >
+		      </div>
+		      <div class="card-content" >
+		        <span class="card-title" >Ejercicio Reto.</span>
+		        <p>
+		        Resuelve este ejercicio Reto que viene de la guía de Radicales que viste en clases anteriores
+		        recuerda que puedes pedirle ayuda a tus maestros si tienes dudas.
+		        </p>
+		        <p>Puedes preguntarnos por email a travez de <a href="mailto:miguelhernandezgaitan13@gmail.com" >este correo</a>.</p>
+		      </div>
+		    </div>
+		    <h4>Trinomio:</h4>
+		    <p>Es el polinomio que consta de 3 términos</p>
+		    <div class="align-example" >
+		      <p>X-3y+3</p>
+		      <p>x<sup>2</sup>+bx+c</p>
+		      <p>4x+1+a</p>
+		      <p>⅔x+4y-⅛z</p>
+		    </div>
+		    <!-- Carta dos -->
+		    <div class="card" >
+		      <div class="card-image" >
+		        <img src="image/polinomioTCP.png" >
+		      </div>
+		      <div class="card-content" >
+		        <span class="card-title" >Caso Especial.</span>
+		        <p>
+		        Hay casos donde nos dan una ecuación como la que se muestra la imagen, en este caso
+		        se tiene que realizar una <a href="factorizacion.html" >Factorización</a> ya que es seguro que 
+		        en un ejercicio te soliciten que procedas a factorizar el polinomio y no ha indicar que tipo de polinomio es. También con los monomios hay factorización
+		        </p>
+		      </div>
+		    </div>
+		    <h4>Polinomio:</h4>
+		    <p>Es el que consta de 3 a más términos.</p>
+		    <div class="align-example" >
+		      <p>x+3y+2-1t</p>
+		      <p>x<sup>3</sup>+3y<sup>2</sup>-2y+4</p>
+		      <p>x+y+c+z+a</p>
+		    </div>
+		    <!-- End the Clasificación de polinomios -->
+		    <!-- Grados del polinomio -->
+		    <blockquote id="grado" class="section scrollspy" >Grado Absoluto de un polinomio (GA).<br>
+		    Grado relativo de un polinomio (GR).</blockquote>
+		    <h6 class="importantForMemory" >Memoria</h6>
+		    <p>
+		    Grado absoluto: Esta dado por el término con mayor grado absoluto.
+		    </p>
+		    <p>Otra forma de entender: El grado absoluto de un término es la suma de los exponentes de las variables</p>
+		    <p>
+		    Grado relativo: Esta dado por el que término de mayor exponente de la letra(variable) referida en dicho polinomio.
+		    </p>
+		    <h4 class="ejemploIndicator" >Example (Ejemplo).</h4>
+		    <table bgcolor="#00ff00" class="responsive-table">
+		    	<thead>
+		    	  <tr>
+		    	  	<td>Ecuación</td>
+		    	  	<td>Grado absoluto</td>
+		    	  	<td>Grado relativo</td>
+		    	  </tr>	
+		    	</thead>
+				<tbody>
+					<tr>
+						<td>P=4x<sup>4</sup>y<sup>3</sup>z<sup>5</sup>+8x<sup>5</sup>y<sup>4</sup>z<sup>6</sup>+9x<sup>6</sup>y<sup>2</sup>z<sup>8</sup></td>
+						<td>12, 15, 16</td>	
+						<td>x=6, y=4, z=8</td>	
+					</tr>
+				</tbody>
+		    </table>
+		    <P>El grado absoluto de P</P>
+		    <p>GA de 4x<sup>4</sup>y<sup>3</sup>z<sup>5</sup> es 12</p>
+		    <p>GA de 8x<sup>5</sup>y<sup>4</sup>z<sup>6</sup> es 15</p>
+		    <p>GA de 8x<sup>5</sup>y<sup>4</sup>z<sup>6</sup> es 16</p>
+		    <p class="Subrayado" >El grado relativo de X = 6 (Por ser el mayor exponente).</p>
+		    <p class="Subrayado" >El grado relativo de Y = 4 (Por ser el mayor exponente).</p>
+		    <p class="Subrayado" >El grado relativo de Z = 8 (Por ser el mayor exponente).</p>
+		    <!--<video class="responsive-video" id="videoPlay" src="amazona.mp4" muted controls></video>-->
+		  <!-- Fin del Artículo y de grados -->
+		  </section>
+	    </article>
+	    <!-- Términos semejantes -->
+	    <article id="terminos" class="container scrollspy">
+	    	<blockquote class="section">Términos semejantes.</blockquote>
+	    	<p id="escribe">Cuando dos o más términos son semenantes cuando tienen la mimas parte literal
+	    	 y los exponentes afectan a las mismas bases.</p>
+	    	 <p>Los números tienen las variables iguales con exponentes iguales y se puede realizar una operación arítmetica.
+	    	</p>
+	    	<h6>
+	    	Los siguientes términos tienen las mismas bases con sus repectivos exponentes iguales, por lo consiguiente son semejantes:
+	    	</h6>
+	    	<div class="terminosSM" >
+	    	  <h6>9X con 2X</h6>
+	    	  <h6>4Y<sup>4</sup>Z<sup>8</sup> con 6Y<sup>4</sup>Z<sup>8</sup></h6>
+	    	  <h6>⅔Y<sup>3</sup> con ⅞Y<sup>3</sup></h6>
+	    	  <h6>3X<sup>2</sup>Y<sup>3</sup> con 6X<sup>2</sup>Y<sup>3</sup></h6>
+	    	</div>
+	    	<h5 class="importantForMemory" >Reducción de términos Semejantes.</h5>
+	    	<p>
+	    	Para simplificar expresiones que llevan términos semejantes se suman o restan los coeficientes y se deja la parte literal.
+	    	</p>
+	    	<h5 class="ejemploIndicator" >Example (ejemplo)</h5>
+	    	<div class="ejemploContainer" >
+	    	  <div class="titleExample" >
+	    	    <p>Nivel básico</p>
+	    	  </div>
+			  <div class="example-content" >
+			    <div class="title-basic" >
+			      <div class="title-question" >
+			        <p>Resolver la siguiente ecuación.</p>
+			      </div>
+			     <div class="ecuacion_ejemplo" >
+			       <p>-6XY<sup>3</sup>+9XY<sup>3</sup>-XY<sup>3</sup></p>
+			     </div>
+			   </div>
+			   <ol>
+			     <span class="b_bottom" >Posibles Respuestas:</span>
+			     <li>2XY<sup>2</sup></li>
+		     	 <li>2XY</li>
+		         <li>4XZ<sup>2</sup></li>
+		         <li>8XY<sup>3</sup></li>
+			   </ol>
+			   <!-- Toggle-more es para programar el boton en js -->
+			   <button id="toggle-more" class="button-stylus" >Ver mas</button>
+			   <!-- Esta oculto por la clase ejercicio-hiden -->
+			   <div id="hidden-process" class="ejercicio-hiden container" >
+			     <p>Se agrupan los coeficientes y se realiza la operación que da como resultado:</p>
+			     <p>-6XY<sup>3</sup>+9XY<sup>3</sup>-XY<sup>3</sup> = (-6+9-1)XY<sup>3</sup></p>
+			     <p>El resultado seria: 2XY<sup>2</sup> y estaria en el inciso 1, no el 2 por que no tiene como potencia al 3</p>
+			     <p>Importante:</p>
+			     <p>Se le resta 1 por que aunque no aparezca en el -XY<sup>3</sup> hay un uno como coeficiente</p>
+			   </div>
+			  </div>
+	    	</div>
+	    	<div style="margin-top:15px" class="ejemploContainer" >
+	    	  <div class="titleExample2" >
+	    	    <p>Nivel Intermedio</p>
+	    	  </div>
+			  <div class="example-content" >
+			  	<div class="title-basic" >
+			  	  <div class="title-question" >
+			  	    <p>Simplificar la siguiente expresión</p>
+			  	  </div>
+			  	  <div class="ecuacion_ejemplo" >
+			  	    <p>0.5a<sup>3</sup>b-3ab<sup>3</sup>-5a<sup>3</sup>b+0.75ab<sup>3</sup>-⅔a<sup>3</sup>b</p>
+			  	  </div>
+			  	  <ol>
+			  	    <span class="b_bottom" >Posibles respuestas</span>
+			  	    <li>NDLA</li>
+			  	    <li>0</li>
+			  	    <li>1</li>
+			  	    <li>-⅞a<sup>3</sup>b+⅝ab<sup>3</sup></li>
+			  	    <li>(32/13)a<sup>3</sup>b-(22/17)ab<sup>3</sup></li>
+			  	  </ol>
+			  	</div>
+			  </div>
+	    	</div>
+	    	<div class="entrenamiento" >
+	    	  <h5 class="ejercicios" >Ejercicios Propuestos.</h5>
+	    	  <h6>Seleccione la respuesta correcta de los siguientes ejercicios:</h6>
+	    	  <ol>
+			
+	    	  </ol>
+	    	</div>
+	    </article>
+      </section>
+    </div>
+
+<!--    <img class="gira" src="image/nuncaPares.jpg" />-->
+<!-- Opciones de entrada de búsqueda -->
+<datalist id="materias" >
+  <option data-html="true" value="Matematicas" ></option>
+  <option value="Química" ></option>
+  <option value="Historia" ></option>
+  <option value="Biología" ></option>
+</datalist>
+<!--<div class="overlayL" id="overlayL" ></div>-->
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/materialize.min.js"></script>
+<script src="js/init.js"></script>
+<!--  -->
+<script>
+	window.addEventListener('load', () => {
+  setTimeout(carga, 1500)
+  
+  function carga(){
+    document.getElementById('circulo').className = 'hide'
+    document.getElementById('mostrar').className = 'animated wobble'
+    var fondo = document.getElementById('body').className = 'white'
+  }
+ });
+	// $texto = document.getElementById('escribe')
+	// function renderText(texto) {
+	// 	$texto.textContent = texto
+	// }
+
+	// function buy(thing, time = 2000) {
+	// 	return new Promise((resolve, reject) => {
+	// 	setTimeout(() => {
+	// 		renderText(`${thing}`)
+	// 		resolve(`${thing}`)
+	// 	}, time)
+	// })
+	// }
+
+
+	// 	(async () => {
+	// 		const compra = async () => {
+	// 			const cart = []
+	// 			const fruta = await buy('frutas')
+	// 			cart.push(fruta)
+	// 			const verduras = await buy('verduras')
+	// 			cart.push(verduras)
+	// 			const carne = await buy('carne')
+	// 			cart.push(carne)
+ //                return cart;
+	// 		}
+	// 		const cart = await compra()
+	// 		renderText(cart.toString())
+	// 	})();
+
+</script>
+<script src="js/algebra.js"></script>
+</body>
+</html>

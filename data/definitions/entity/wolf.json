@@ -1,0 +1,12 @@
+{
+  "definition.wolf": {
+    "textures": {
+      "default": "textures/entity/wolf/wolf",
+      "angry": "textures/entity/wolf/wolf_angry",
+      "tame": "textures/entity/wolf/wolf_tame"
+    },
+    "geometry": {
+      "default": "geometry.wolf"
+    }
+  }
+}

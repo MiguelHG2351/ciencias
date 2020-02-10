@@ -1,0 +1,52 @@
+body {
+font-family: 'Roboto', Verdana;
+}
+
+.cursores {
+  cursor:help;
+}
+
+.animationAlert {
+  animation-name:campana;
+  animation-duration:.7s;
+}
+
+@keyframes campana {
+from {
+  -webkit-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1);
+}
+
+50% {
+  transform: scale3d(1.5, 1.5, 1.75);
+}
+
+to {
+  transform: scale3d(1, 1, 1);
+}
+
+}
+
+.hiddenRobot {
+  display:none;
+}
+
+.overlayL {
+ position:fixed;
+ top:0;
+ bottom:0;
+ right:0;
+ left:0;
+ z-index:;
+}
+
+.hiddenRobot.is-active {
+  display:block;
+}
+
+.robot-container {
+  position:fixed;
+  z-index:7;
+  right:0;
+  top:80px;
+}

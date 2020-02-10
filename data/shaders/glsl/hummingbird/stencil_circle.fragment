@@ -1,0 +1,24 @@
+// __multiversion__
+// This signals the loading code to prepend either #version 100 or #version 300 es as apropriate.
+
+#include "shaders/fragmentVersionCentroidUV.h"
+#include "shaders/uniformMacro.h"
+
+varying vec4 ColorOut;
+varying vec4 AdditionalOut;
+varying vec3 ScreenNormalPosition;
+
+void main() {
+	float alpha = 1.0;
+	vec4 outColor = ColorOut;
+
+	vec2 posPixels = ScreenNormalPosition.xy;
+	float distance2edge = length(posPixels - AdditionalOut.xy) - AdditionalOut.z;
+	alpha = clamp(0.5 - distance2edge, 0.0, 1.0);
+
+	if (alpha < 0.00390625) {
+		discard;
+	}
+
+	gl_FragColor = outColor;
+}

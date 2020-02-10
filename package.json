@@ -1,0 +1,17 @@
+{
+  "name": "miguel",
+  "version": "1.0.4",
+  "description": "hello world",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "Server",
+    "Noobs",
+    "pHTML"
+  ],
+  "author": "Miguel Hernández",
+  "license": "ISC"
+}

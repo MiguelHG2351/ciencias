@@ -1,0 +1,32 @@
+// __multiversion__
+// This signals the loading code to prepend either #version 100 or #version 300 es as apropriate.
+
+#include "shaders/fragmentVersionCentroidUV.h"
+#include "shaders/uniformMacro.h"
+
+varying vec2 ExtraParams;
+
+uniform vec4 PRIM_PROPS_0;
+uniform vec4 PRIM_PROPS_1;
+uniform int SHADER_TYPE;
+
+void main() {
+	if (SHADER_TYPE == 14) {
+		// Hairline quads
+		vec2 px = dFdx(ExtraParams);
+		vec2 py = dFdy(ExtraParams);
+
+		float fx = (2.0 * ExtraParams.x) * px.x - px.y;
+		float fy = (2.0 * ExtraParams.x) * py.x - py.y;
+
+		float edgeAlpha = (ExtraParams.x * ExtraParams.x - ExtraParams.y);
+		float sd = sqrt((edgeAlpha * edgeAlpha) / (fx * fx + fy * fy));
+
+		float alpha = 1.0 - sd;
+
+		gl_FragColor = PRIM_PROPS_0 * PRIM_PROPS_1.x * alpha;
+	} else {
+		// Hairline lines
+		gl_FragColor = PRIM_PROPS_0 * min(1.0, (1.0 - abs(ExtraParams.y)) * PRIM_PROPS_1.x);
+	}
+}
